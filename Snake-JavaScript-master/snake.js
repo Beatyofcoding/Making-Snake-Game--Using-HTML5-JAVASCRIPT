@@ -46,6 +46,10 @@ for(let i = 0; i < snake.length ; i++){
 }
 
    ctx.drawImage(foodImg, food.x, food.y);
+
+   ctx.fillStyle = "white";
+   ctx.font = "45px Changa one"
+   ctx.fillText(score,2*box,1.6*box);
 }
 
 // Call draw function every 50 ms

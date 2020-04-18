@@ -64,6 +64,31 @@ for(let i = 0; i < snake.length ; i++){
 
    ctx.drawImage(foodImg, food.x, food.y);
 
+
+   // Old Snake's Head position
+   let snakeX = snake[0].x;
+   let snakeY = snake[0].y;
+
+   
+   
+   // Which Direction
+   if( d == "LEFT") snakeX -= box;
+   if( d == "UP") snakeY -= box;
+   if( d == "RIGHT") snakeX += box;
+   if( d == "DOWN") snakeY += box;
+   
+   // Removing the tail
+   snake.pop();
+
+   // Adding new head
+
+   let newHead = {
+       x : snakeX,
+       y : snakeY
+   }
+
+    snake.unshift(newHead);
+
    ctx.fillStyle = "white";
    ctx.font = "45px Changa one"
    ctx.fillText(score,2*box,1.6*box);

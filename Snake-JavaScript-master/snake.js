@@ -48,6 +48,16 @@ function direction(event){
         d = "DOWN";
     }
 }
+
+// Check Collision Funcion
+function collision(head,array){
+    for(let i = 0; i < array.length; i++){
+        if(head.x == array[i].x && head.y == array[i].y){
+            return true;
+        }
+    }
+    return false;
+}
 // Draw everything to our convas
 
 function draw(){
@@ -90,15 +100,21 @@ if(snakeX == food.x && snakeY == food.y){
     snake.pop();
 }
 
+// Adding new head
+
+  let newHead = {
+    x : snakeX,
+    y : snakeY
+}
+
+// Setting "Game Over" Rules Using ClearInterval+If&elseStatements
+
+if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
+    clearInterval(game);
+}
 
 
-   // Adding new head
-
-   let newHead = {
-       x : snakeX,
-       y : snakeY
-   }
-
+ 
     snake.unshift(newHead);
 
    ctx.fillStyle = "white";

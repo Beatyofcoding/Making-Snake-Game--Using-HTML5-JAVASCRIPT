@@ -78,7 +78,7 @@ for(let i = 0; i < snake.length ; i++){
    if( d == "DOWN") snakeY += box;
    
 // Increamenting size of snake when it eats food
-if(snakeX == food.x && snakeY == snakeY){
+if(snakeX == food.x && snakeY == food.y){
     score++;
     food = {
         x: Math.floor(Math.random()*17+1) * box,
@@ -90,6 +90,8 @@ if(snakeX == food.x && snakeY == snakeY){
     snake.pop();
 }
 
+
+
    // Adding new head
 
    let newHead = {
@@ -100,7 +102,7 @@ if(snakeX == food.x && snakeY == snakeY){
     snake.unshift(newHead);
 
    ctx.fillStyle = "white";
-   ctx.font = "45px Changa one"
+   ctx.font = "45px Changa one";
    ctx.fillText(score,2*box,1.6*box);
 }
 

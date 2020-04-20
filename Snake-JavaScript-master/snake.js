@@ -65,7 +65,7 @@ function draw(){
     ctx.drawImage(ground,0,0);
 
 for(let i = 0; i < snake.length ; i++){
-    ctx.fillStyle = ( i == 0 )? "green" : "white";
+    ctx.fillStyle = ( i == 0 )? "green" : "black";
     ctx.fillRect(snake[i].x,snake[i].y,box,box);
 
     ctx.strokeStyle = "red";
@@ -117,7 +117,7 @@ if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || col
  
     snake.unshift(newHead);
 
-   ctx.fillStyle = "white";
+   ctx.fillStyle = "black";
    ctx.font = "45px Changa one";
    ctx.fillText(score,2*box,1.6*box);
 }
@@ -132,16 +132,16 @@ let game = setInterval(draw,50);
 
 // load audio files
 
-let dead = new Audio();
-let eat = new Audio();
-let up = new Audio();
-let right = new Audio();
-let left = new Audio();
-let down = new Audio();
+// let dead = new Audio();
+// let eat = new Audio();
+// let up = new Audio();
+// let right = new Audio();
+// let left = new Audio();
+// let down = new Audio();
 
-dead.src = "audio/dead.mp3";
-eat.src = "audio/eat.mp3";
-up.src = "audio/up.mp3";
-right.src = "audio/right.mp3";
-left.src = "audio/left.mp3";
-down.src = "audio/down.mp3";
+// dead.src = "audio/dead.mp3";
+// eat.src = "audio/eat.mp3";
+// up.src = "audio/up.mp3";
+// right.src = "audio/right.mp3";
+// left.src = "audio/left.mp3";
+// down.src = "audio/down.mp3";

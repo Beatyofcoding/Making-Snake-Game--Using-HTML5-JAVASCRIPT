@@ -65,7 +65,7 @@ function draw(){
     ctx.drawImage(ground,0,0);
 
 for(let i = 0; i < snake.length ; i++){
-    ctx.fillStyle = ( i == 0 )? "red" : "green";
+    ctx.fillStyle = ( i == 0 )? "red" : "black";
     ctx.fillRect(snake[i].x,snake[i].y,box,box);
 
     ctx.strokeStyle = "red";
@@ -117,7 +117,7 @@ if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || col
  
     snake.unshift(newHead);
 
-   ctx.fillStyle = "black";
+   ctx.fillStyle = "white";
    ctx.font = "45px Changa one";
    ctx.fillText(score,2*box,1.6*box);
 }

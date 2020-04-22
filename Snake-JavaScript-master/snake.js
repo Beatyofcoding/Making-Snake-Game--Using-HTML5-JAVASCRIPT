@@ -144,9 +144,9 @@ if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || col
    ctx.fillText(score,2*box,1.6*box);
 }
 
-// Call draw function every 70 ms
+// Call draw function every 85 ms
 
-let game = setInterval(draw,70);
+let game = setInterval(draw,85);
 
 
 

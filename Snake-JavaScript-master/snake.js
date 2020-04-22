@@ -12,6 +12,22 @@ ground.src = "img/ground.png";
 
 const foodImg = new Image();
 foodImg.src = "img/food.png";
+
+// Load audio files
+
+const dead = new Audio();
+const eat = new Audio();
+const up = new Audio();
+const left = new Audio();
+const right = new Audio();
+const down = new Audio();
+
+dead.src = "audio/dead.mp3";
+eat.src = "audio/eat.mp3";
+up.src = "audio/up.mp3";
+right.src = "audio/right.mp3";
+left.src = "audio/left.mp3";
+down.src = "audio/down.mp3";
 // Creating the snake
 
 let snake = [];
@@ -39,12 +55,16 @@ document.addEventListener("keydown",direction);
 
 function direction(event){
     if(event.keyCode == 37 && d != "RIGHT"){
+        left.play();
         d = "LEFT";
     }else if(event.keyCode == 38 && d != "DOWN"){
+        up.play();
         d = "UP";
     }else if(event.keyCode == 39 && d != "LEFT"){
+        right.play();
         d = "RIGHT";
     }else if(event.keyCode == 40 && d != "UP"){
+        down.play();
         d = "DOWN";
     }
 }
@@ -90,6 +110,7 @@ for(let i = 0; i < snake.length ; i++){
 // Increamenting size of snake when it eats food
 if(snakeX == food.x && snakeY == food.y){
     score++;
+    eat.play();
     food = {
         x: Math.floor(Math.random()*17+1) * box,
         y: Math.floor(Math.random()*15+3) * box
@@ -130,18 +151,4 @@ let game = setInterval(draw,70);
 
 
 
-// load audio files
 
-let dead = new Audio();
-let eat = new Audio();
-let up = new Audio();
-let right = new Audio();
-let left = new Audio();
-let down = new Audio();
-
-dead.src = "audio/dead.mp3";
-eat.src = "audio/eat.mp3";
-up.src = "audio/up.mp3";
-right.src = "audio/right.mp3";
-left.src = "audio/left.mp3";
-down.src = "audio/down.mp3";
